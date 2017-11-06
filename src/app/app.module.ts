@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { QuoteDirective } from './quote.directive';
+import { NamesDirective } from './names.directive';
+import { StatesComponent } from './states/states.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuoteDirective
+    QuoteDirective,
+    NamesDirective,
+    StatesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

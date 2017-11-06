@@ -1,13 +1,37 @@
 <div style="text-align:center">
   <h2>Politician Quote</h2>
 
-    <pre appQuote
-    [politicianAuthor]="'Abraham' + ' Lincoln'"
-    politicianQuote="Government of the people, by the people, for the people, shall not perish from the Earth.">
+  <pre appQuote
+       [politicianAuthor]="getPoliticianName()"
+       politicianQuote="Government of the people, by the people, for the people, shall not perish from the Earth.">
    </pre>
 
+  <pre [innerHTML]="'Government of the people, by the people, for the people, shall not perish from the Earth.<br>-AbrahamLincoln'"></pre>
+
+  <!-- Secret Sentence: show presidents please -->
+<label for="secretSentence">
+    Politicians Will be displayed below:
+    <input id="secretSentence"
+    [(ngModel)]="secretSentence"
+    type="text"
+    placeholder="Ask politely..."/>
+</label>
+
+
+<div *appNames="secretSentence">
+    <h4>This will only show up if the secret word is correct:</h4>
+    <p>Bill Clinton, Donald Trump, George Bush, Barack Obama</p>
 </div>
 
+<h4>Find the President's Speech Below</h4>
+<button type="button" (click)="rollState()">Roll State</button>
+<br>
+<br>
+<button type="button" (click)="showStates = !showStates">Show States</button>
+
+<app-states *ngIf="showStates" [selectedState]="selectedState" [presidentSpeech]="'This is the President\'s Speech'"></app-states>
+
+</div>
 
 
 

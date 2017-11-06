@@ -6,14 +6,10 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 export class QuoteDirective implements OnInit {
 
   @Input() politicianQuote: string;
-  @Input() politicianAuthor: any;
+  @Input() politicianAuthor: string;
 
   constructor(private el: ElementRef) {}
 
-
-   getPoliticianName(): string {
-     return 'Abraham Lincoln';
-   }
    ngOnInit() {
     this.el.nativeElement.innerHTML = `"${this.politicianQuote}" <br> - ${this.politicianAuthor}`;
    }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  secretSentence = '';
+
+  selectedState: any = 'Click button to select random state';
+
+  showStates = true;
+
+  public rollState(): any {
+    if (Math.random() >= 0.5) {
+      this.selectedState = 'West Virginia';
+    } else {
+      this.selectedState =  {stateName: 'California'};
+    }
+  }
+
+  public getPoliticianName(): string {
+    return 'Abraham Lincoln';
+  }
+
 }
